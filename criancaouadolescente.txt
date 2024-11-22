@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace criancaouadolescente
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int idade;
+            bool entradaValida = false;
+            do
+            {
+
+
+                Console.WriteLine("\nDigite sua idade: ");
+                string entrada = Console.ReadLine();
+
+                if (int.TryParse(entrada, out idade) && idade >= 0)
+                {
+                    entradaValida = true;
+                }
+                else
+                {
+                    Console.WriteLine("Entrada Invalida. Por favor, tente novamente:\n");
+                }
+            }   while (!entradaValida);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            if (idade <= 12)
+                Console.WriteLine("\nEssa pessoa é uma Criança");
+            else if (idade <= 17)
+                Console.WriteLine("\nEssa pessoa é um adolescente");
+            else if (idade <= 59)
+                Console.WriteLine("\nEssa pessoa é um adulto");
+            else
+                Console.WriteLine("\nEssa pessoa é um idoso");
+
+            Console.ReadKey();
+
+
+          
+
+                
+                
+                   
+      
+        }
+    }
+}
